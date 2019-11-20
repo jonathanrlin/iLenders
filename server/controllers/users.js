@@ -1,10 +1,8 @@
-const mongoose = require("mongoose");
-
-const User = mongoose.model("User");
+const User = require('../models/mySQL').User;
 
 module.exports = {
   all(req, res) {
-    User.find()
+    User.findAll()
       .then(allUsers => {
         res.json({ users: allUsers });
       })
