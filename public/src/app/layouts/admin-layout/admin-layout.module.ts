@@ -11,6 +11,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { LendHistoryComponent} from '../../lend-history/lend-history.component';
 
 import {
   MatButtonModule,
@@ -20,6 +21,7 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -31,7 +33,7 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatTooltipModule,
+    MatTooltipModule
   ],
   declarations: [
     DashboardComponent,
@@ -42,6 +44,7 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    LendHistoryComponent,
   ]
 })
 
