@@ -18,12 +18,12 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: "/typography",
-    title: "Typography",
+    title: "Lend",
     icon: "library_books",
     class: ""
   },
-  { path: "/icons", title: "Lend", icon: "bubble_chart", class: "" },
-  { path: "/maps", title: "Maps", icon: "location_on", class: "" },
+  { path: "/icons", title: "Sell", icon: "bubble_chart", class: "" },
+  { path: "/maps", title: "Details", icon: "location_on", class: "" },
   {
     path: "/notifications",
     title: "Notifications",

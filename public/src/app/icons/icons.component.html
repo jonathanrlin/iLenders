@@ -1,88 +1,94 @@
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h1 class="display-4 text-center">New Lend</h1>
-    </div>
-    <div class="card-body">
-      <form (submit)="handleSubmit()">
-        <div class="form-group">
-          <label> Item Name:</label>
-          <input
-            type="text"
-            name="newLendingItem.name"
-            [(ngModel)]="newLendingItem.name"
-            class="form-control"
-          />
-        </div>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="display-4 text-center card-header-danger">New Sell</h1>
+          </div>
+          <div class="card-body">
+            <form (submit)="handleSubmit()">
+              <div class="form-group">
+                <label class="text-primary"> Item Name:</label>
+                <input
+                  type="text"
+                  name="newSellingItem.name"
+                  [(ngModel)]="newSellingItem.name"
+                  class="form-control"
+                />
+              </div>
 
-        <div class="form-group">
-          <label>Location:</label>
-          <input
-            type="text"
-            name="newLendingItem.location"
-            [(ngModel)]="newLendingItem.location"
-            class="form-control"
-          />
-          <div class="form-group">
-            <label>Image:</label>
-            <input
-              type="file"
-              name="newLendingItem.image"
-              class="form-control"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <div class="form-group">
-              <label>Price</label>
-              <input
-                type="number"
-                name="newLendingItem.price"
-                [(ngModel)]="newLendingItem.price"
-                class="form-control"
-              />
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="form-group">
-              <label>Item Condition</label>
-              <select
-                name="newLendingItem.condition"
-                [(ngModel)]="newLendingItem.condition"
-                multiple
-                class="form-control"
-              >
-                <option value="new" selected>New</option>
-                <option value="openBox">Open Box</option>
-                <option value="used">Used</option>
-                <option value="parts">For Parts</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-        </div>
+              <div class="form-group">
+                <label class="text-primary">Location:</label>
+                <input
+                  type="text"
+                  name="newSellingItem.location"
+                  [(ngModel)]="newSellingItem.location"
+                  class="form-control"
+                />
+                <div class="form-group">
+                  <label class="text-primary">Image:</label>
+                  <input
+                    type="file"
+                    name="newSellingItem.image"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="text-primary">Price</label>
+                    <input
+                      type="number"
+                      name="newSellingItem.price"
+                      [(ngModel)]="newSellingItem.price"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label class="text-primary">Item Condition</label>
+                    <select
+                      name="newSellingItem.condition"
+                      [(ngModel)]="newSellingItem.condition"
+                      multiple
+                      class="form-control"
+                    >
+                      <option value="new" selected>New</option>
+                      <option value="openBox">Open Box</option>
+                      <option value="used">Used</option>
+                      <option value="parts">For Parts</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-        <div class="form-group">
-          <label> Description</label>
-          <textarea
-            name="newLendingItem.description"
-            cols="30"
-            rows="10"
-            class="form-control"
-          ></textarea>
+              <div class="form-group">
+                <label class="text-primary"> Description</label>
+                <textarea
+                  name="newSellingItem.description"
+                  cols="30"
+                  rows="10"
+                  class="form-control"
+                ></textarea>
+              </div>
+              <div class="float-right">
+                <button
+                  type="button"
+                  (click)="handleCancel()"
+                  class="btn-lg btn-secondary mr-2 "
+                >
+                  Cancel
+                </button>
+                <button class="btn-lg btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="float-right">
-          <button
-            type="button"
-            (click)="handleCancel()"
-            class="btn-lg btn-secondary mr-2 "
-          >
-            Cancel
-          </button>
-          <button class="btn-lg btn-primary">Submit</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
