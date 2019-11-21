@@ -1,14 +1,15 @@
-'use strict';
+"use strict";
 
 module.exports = (sequelize, DataTypes) => {
-  const Item = sequelize.define('Item',
+  const Item = sequelize.define(
+    "Item",
     {
       name: {
         type: DataTypes.STRING,
-        validate: { len: [4,] }
+        validate: { len: [4] }
       },
       description: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
       },
       isSell: {
         type: DataTypes.BOOLEAN
@@ -20,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN
       },
       lendPrice: {
+        
         type: DataTypes.DECIMAL(10, 2)
       },
       condition: {
@@ -28,11 +30,14 @@ module.exports = (sequelize, DataTypes) => {
       location: {
         type: DataTypes.STRING
       },
+      image: {
+        type: DataTypes.STRING
+      }
     },
-    { sequelize, tableName: 'item' }
+    { sequelize, tableName: "item" }
   );
-  Item.associate = function(models){
+  Item.associate = function(models) {
     Item.hasMany(models.Duration);
-  }
+  };
   return Item;
-}
+};
