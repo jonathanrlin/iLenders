@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public/dist")));
 
-require("./server/config/routes")(app);
+require("./server/routes/index")(app);
 app.all("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/dist/index.html"));
 });
