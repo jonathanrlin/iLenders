@@ -1,7 +1,8 @@
-const Sequelize = require("sequelize");
-class UserModel extends Sequelize.Model {
-  static init(sequelize, DataTypes) {
-    return super.init({
+'use strict';
+
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User',
+    {
       name: {
         type: DataTypes.STRING,
         validate: { len: [4,] }
@@ -15,12 +16,7 @@ class UserModel extends Sequelize.Model {
         validate: { len: [4,] }
       }
     },
-      {
-        tableName: "user",
-        sequelize
-      }
-    );
-  }
+    { sequelize, tableName: 'user' }
+  );
+  return User;
 }
-
-module.exports = UserModel;
