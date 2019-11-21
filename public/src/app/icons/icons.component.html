@@ -1,29 +1,88 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="display-4 text-center">New Lend</h1>
+    </div>
+    <div class="card-body">
+      <form (submit)="handleSubmit()">
+        <div class="form-group">
+          <label> Item Name:</label>
+          <input
+            type="text"
+            name="newLendingItem.name"
+            [(ngModel)]="newLendingItem.name"
+            class="form-control"
+          />
+        </div>
 
-<div class="main-content">
-  <div class="container-fluid">
-      <div class="card card-plain">
-          <div class="card-header card-header-danger">
-              <h4 class="card-title">Material Design Icons</h4>
-              <p class="card-category">Handcrafted by our friends from
-                  <a target="_blank" href="https://design.google.com/icons/">Google</a>
-              </p>
+        <div class="form-group">
+          <label>Location:</label>
+          <input
+            type="text"
+            name="newLendingItem.location"
+            [(ngModel)]="newLendingItem.location"
+            class="form-control"
+          />
+          <div class="form-group">
+            <label>Image:</label>
+            <input
+              type="file"
+              name="newLendingItem.image"
+              class="form-control"
+            />
           </div>
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="card-body">
-                      <div class="iframe-container d-none d-lg-block">
-                          <iframe src="https://design.google.com/icons/">
-                              <p>Your browser does not support iframes.</p>
-                          </iframe>
-                      </div>
-                      <div class="col-md-12 d-none d-sm-block d-md-block d-lg-none d-block d-sm-none text-center ml-auto mr-auto">
-                          <h5>The icons are visible on Desktop mode inside an iframe. Since the iframe is not working on Mobile and Tablets please visit the icons on their original page on Google. Check the
-                              <a href="https://design.google.com/icons/" target="_blank">Material Icons</a>
-                          </h5>
-                      </div>
-                  </div>
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Price</label>
+              <input
+                type="number"
+                name="newLendingItem.price"
+                [(ngModel)]="newLendingItem.price"
+                class="form-control"
+              />
+            </div>
           </div>
-      </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Item Condition</label>
+              <select
+                name="newLendingItem.condition"
+                [(ngModel)]="newLendingItem.condition"
+                multiple
+                class="form-control"
+              >
+                <option value="new" selected>New</option>
+                <option value="openBox">Open Box</option>
+                <option value="used">Used</option>
+                <option value="parts">For Parts</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label> Description</label>
+          <textarea
+            name="newLendingItem.description"
+            cols="30"
+            rows="10"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="float-right">
+          <button
+            type="button"
+            (click)="handleCancel()"
+            class="btn-lg btn-secondary mr-2 "
+          >
+            Cancel
+          </button>
+          <button class="btn-lg btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
