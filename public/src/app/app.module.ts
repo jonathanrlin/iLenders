@@ -22,7 +22,7 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { LendHistoryComponent } from './lend-history/lend-history.component';
+
 
 @NgModule({
   imports: [
@@ -39,8 +39,7 @@ import { LendHistoryComponent } from './lend-history/lend-history.component';
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-    LendHistoryComponent,
+    AdminLayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
