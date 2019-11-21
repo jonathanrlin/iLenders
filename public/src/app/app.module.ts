@@ -19,7 +19,7 @@ import { NotificationsComponent } from "./notifications/notifications.component"
 import { UpgradeComponent } from "./upgrade/upgrade.component";
 import { AgmCoreModule } from "@agm/core";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
-
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [
@@ -30,14 +30,12 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyAq2lQs422z-ag9ZW7NRg8Ny2tsJnFqPO4"
     })
   ],
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent
-  ],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
