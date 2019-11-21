@@ -31,8 +31,14 @@
                   </th>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
+                  <tr *ngFor="let item of items">
+                      <td>{{ item.id }}</td>
+                      <td>{{ item.name }}</td>
+                      <td>{{ item.image }}</td>
+                      <td>{{ item.start }}</td>
+                      <td>{{ item.return }}</td>
+                      <td>{{ item.price }}</td>
+                    <!-- <td>
                       1
                     </td>
                     <td>
@@ -280,7 +286,7 @@
                   </td>
                   <td class="text-primary">
                       $60,000
-                  </td>
+                  </td> -->
                   </tr>
                 </tbody>
               </table>

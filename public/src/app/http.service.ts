@@ -10,4 +10,8 @@ export class HttpService {
   registerUser(newUser) {
     return this._http.post("/api/users", newUser);
   }
+
+  getUsersRentedItems(userId){
+    return this._http.get("api/users");
+  }
 }

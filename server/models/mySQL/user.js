@@ -18,5 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     { sequelize, tableName: 'user' }
   );
+  User.associate = function(models){
+    User.hasMany(models.RentedItem);
+  }
   return User;
 }
