@@ -29,9 +29,10 @@
                 <div class="form-group">
                   <label class="text-primary">Image:</label>
                   <input
-                    type="file"
+                    type="text"
                     name="newSellingItem.image"
                     class="form-control"
+                    [(ngModel)]="newSellingItem.image"
                   />
                 </div>
               </div>
@@ -42,7 +43,7 @@
                     <input
                       type="number"
                       name="newSellingItem.price"
-                      [(ngModel)]="newSellingItem.price"
+                      [(ngModel)]="newSellingItem.sellPrice"
                       class="form-control"
                     />
                   </div>
@@ -53,7 +54,6 @@
                     <select
                       name="newSellingItem.condition"
                       [(ngModel)]="newSellingItem.condition"
-                      multiple
                       class="form-control"
                     >
                       <option value="new" selected>New</option>
@@ -73,6 +73,7 @@
                   cols="30"
                   rows="10"
                   class="form-control"
+                  [(ngModel)]="newSellingItem.description"
                 ></textarea>
               </div>
               <div class="float-right">

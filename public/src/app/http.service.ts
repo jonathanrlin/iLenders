@@ -10,4 +10,7 @@ export class HttpService {
   registerUser(newUser) {
     return this._http.post("/api/users", newUser);
   }
+  create(newItem) {
+    return this._http.post("/api/item/new", newItem);
+  }
 }
