@@ -13,4 +13,7 @@ export class HttpService {
   create(newItem) {
     return this._http.post("/api/item/new", newItem);
   }
+  getAll() {
+    return this._http.get("/api/item/all");
+  }
 }

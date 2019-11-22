@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { HttpService } from 'app/http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,12 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  allData: any[] = [{first:"hello"},{sec:"jhs"}];
+
+  constructor(
+    private _httpService: HttpService,
+    private _router: Router,
+  ) { }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -145,6 +152,12 @@ export class DashboardComponent implements OnInit {
 
       //start animation for the Emails Subscription Chart
       this.startAnimationForBarChart(websiteViewsChart);
-  }
+      /* ----------==========     Pulling all Data    ==========---------- */
 
+      this._httpService.getAll()
+      .subscribe((data: any) => {
+        console.log(data);
+        this.allData = data;
+      });
+  }
 }
