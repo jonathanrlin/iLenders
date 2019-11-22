@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN
       },
       lendPrice: {
-
         type: DataTypes.DECIMAL(10, 2)
       },
       condition: {

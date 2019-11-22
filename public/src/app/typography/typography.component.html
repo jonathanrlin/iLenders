@@ -29,9 +29,10 @@
                 <div class="form-group">
                   <label class="text-primary">Image:</label>
                   <input
-                    type="file"
+                    type="text"
                     name="newLendingItem.image"
                     class="form-control"
+                    [(ngModel)]="newLendingItem.image"
                   />
                 </div>
               </div>
@@ -72,6 +73,7 @@
                   cols="30"
                   rows="10"
                   class="form-control"
+                  [(ngModel)]="newLendingItem.description"
                 ></textarea>
               </div>
               <div class="float-right">

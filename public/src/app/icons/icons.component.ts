@@ -22,13 +22,12 @@ export class IconsComponent implements OnInit {
   ngOnInit() {}
   handleSubmit() {
     this._httpService.create(this.newSellingItem).subscribe((data: any) => {
-      if (data.hasOwnProperty("err")) {
+      if (data.hasOwnProperty("errors")) {
         console.log(data);
       } else {
         this._router.navigate(["/"]);
       }
     });
-    console.log(this.newSellingItem);
   }
 
   handleCancel() {

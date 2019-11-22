@@ -38,7 +38,7 @@ module.exports = {
           .then(data => res.json(req.body))
           .catch(errors => res.json(errors));
       })
-      .catch(errors => console.log(errors));
+      .catch(errors => res.json(errors));
   },
 
   deleteById(req, res) {
@@ -62,6 +62,6 @@ module.exports = {
           .then(data => res.json(oldData))
           .catch(errors => res.json(errors));
       })
-      .catch(errors => console.log(errors));
+      .catch(errors => res.json(errors));
   },
 };
