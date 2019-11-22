@@ -15,5 +15,31 @@ module.exports = {
     Item.create(req.body)
       .then(data => res.json(data))
       .catch(errors => res.json(errors));
-  }
+  },
+
+  updateById(req, res) {
+    if (req.body.hasOwnProperty('UserId'))
+      delete req.body.UserId;
+
+    Item.update(
+      req.body,
+      { where: { id: req.body.id } }
+    )
+      .then(data => {
+        if (data[0] < 1) res.json({ errors: { message: 'No such item' } });
+        else res.json(req.body);
+      })
+      .catch(errors => res.json(errors));
+  },
+
+  deleteById(req, res) {
+    Item.destroy(
+      { where: { id: req.query.id } }
+    )
+      .then(data => {
+        if (data < 1) res.json({ errors: { message: 'No such item' } });
+        else res.json(req.query);
+      })
+      .catch(errors => res.json(errors));
+  },
 };
