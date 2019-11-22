@@ -15,14 +15,15 @@ export class TypographyComponent implements OnInit {
     lendPrice: "",
     isLend: true,
     condition: "",
-    location: ""
+    location: "",
+    image: ""
   };
   constructor(private _httpService: HttpService, private _router: Router) {}
 
   ngOnInit() {}
   handleSubmit() {
     this._httpService.create(this.newLendingItem).subscribe((data: any) => {
-      if (data.hasOwnProperty("err")) {
+      if (data.hasOwnProperty("errors")) {
         console.log(data);
       } else {
         this._router.navigate(["/"]);

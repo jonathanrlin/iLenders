@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN
       },
       lendPrice: {
-        
         type: DataTypes.DECIMAL(10, 2)
       },
       condition: {
@@ -36,8 +35,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     { sequelize, tableName: "item" }
   );
-  Item.associate = function(models) {
+  Item.associate = function (models) {
     Item.hasMany(models.Duration);
+    Item.belongsTo(models.User);
   };
   return Item;
 };

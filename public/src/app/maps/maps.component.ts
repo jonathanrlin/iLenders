@@ -28,8 +28,8 @@ export class MapsComponent implements OnInit {
   ngOnInit() {
     this._activateRoute.params.subscribe((params: Params) => {
       this._httpService.getOne(params.id).subscribe((data: any) => {
-        this.item = data.item;
-        console.log(data);
+        this.item = data.data;
+
         var geocoder = new google.maps.Geocoder();
 
         var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
@@ -199,7 +199,6 @@ export class MapsComponent implements OnInit {
   }
 
   codeAddress(geocoder, map) {
-    console.log(this.item.location);
     geocoder.geocode({ address: this.item.location }, function(
       results,
       status
