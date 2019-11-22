@@ -28,7 +28,7 @@ export class IconsComponent implements OnInit {
         this._router.navigate(["/"]);
       }
     });
-    console.log(this.newSellingItem);
+    console.log("THE BOTTOM",this.newSellingItem);
   }
 
   handleCancel() {

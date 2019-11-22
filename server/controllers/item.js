@@ -15,5 +15,7 @@ module.exports = {
     Item.create(req.body)
       .then(data => res.json(data))
       .catch(errors => res.json(errors));
+      console.log("thsi is the data",data);
+      
   }
 };

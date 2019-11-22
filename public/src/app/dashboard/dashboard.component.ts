@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  allData: any[] = [{first:"hello"},{sec:"jhs"}];
+  allData: any[] = [{first:"hello"},{first:"world"},{first:"this"},{first:"is"},{first:"Nasser"},{first:"Takkesh"},];
 
   constructor(
     private _httpService: HttpService,
