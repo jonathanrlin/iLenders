@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root"
@@ -12,5 +12,10 @@ export class HttpService {
   }
   create(newItem) {
     return this._http.post("/api/item/new", newItem);
+  }
+  getOne(id) {
+    return this._http.get(`/api/item/one`, {
+      params: new HttpParams().set("id", id)
+    });
   }
 }
