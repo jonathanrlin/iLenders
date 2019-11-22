@@ -14,5 +14,15 @@ module.exports = {
       .catch(err => {
         res.json({ err: err });
       });
+  },
+  getOne(req, res) {
+    console.log(req.query.id + "Yadda");
+    Item.findAll({ where: { id: req.query.id } })
+      .then(item => {
+        res.json({ item: item });
+      })
+      .catch(errors => {
+        res.json({ errors: errors });
+      });
   }
 };
