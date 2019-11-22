@@ -8,8 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements OnInit {
-  rentedItems: any[] =[];
-  boughtItems: any[] =[];
+  rentedItems: any[] = [];
+  boughtItems: any[] = [];
+
+  // TODO: Get userId from Session
+  userId = '';
 
   constructor(
     private _httpService: HttpService,
@@ -17,9 +20,13 @@ export class TableListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._httpService.getUsersRentedItems(userId)
+    this._httpService.getUsersRentedItems(this.userId)
       .subscribe((data: any) => {
         this.rentedItems = data.items;
+      });
+    this._httpService.getUsersBoughtItems(this.userId)
+      .subscribe((data: any) => {
+        this.boughtItems = data.items;
       });
   }
 

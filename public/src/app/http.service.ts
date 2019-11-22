@@ -12,6 +12,16 @@ export class HttpService {
   }
 
   getUsersRentedItems(userId){
-    return this._http.get("api/users");
+    return this._http.get("api/item/all/rented/" + userId);
+  }
+
+  getUsersBoughtItems(userId){
+    return this._http.get("api/item/all/bought/" + userId);
+  }
+  getUsersLentItems(userId){
+    return this._http.get("api/item/all/lent/" + userId);
+  }
+  getUsersSoldItems(userId){
+    return this._http.get("api/item/all/sold/" + userId);
   }
 }
