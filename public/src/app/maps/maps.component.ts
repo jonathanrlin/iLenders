@@ -16,8 +16,16 @@ interface Marker {
   styleUrls: ["./maps.component.css"]
 })
 export class MapsComponent implements OnInit {
-  item: any = null;
-
+  item: any = {
+    name: "",
+    description: "",
+    isSell: false,
+    lendPrice: "",
+    isLend: true,
+    condition: "",
+    location: "",
+    image: ""
+  };
   constructor(
     private _httpService: HttpService,
     private _router: Router,
@@ -35,8 +43,13 @@ export class MapsComponent implements OnInit {
         var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
 
         var mapOptions = {
-          zoom: 15,
+          zoom: 13,
           center: myLatlng,
+          streetViewControl: false,
+          mapTypeControl: false,
+          zoomControl: false,
+          fullscreenControl: false,
+          gestureHandling: "none",
           scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
           styles: [
             {
@@ -192,6 +205,7 @@ export class MapsComponent implements OnInit {
 
         geocoder = new google.maps.Geocoder();
         this.codeAddress(geocoder, map);
+
         // To add the marker to the map, call setMap();
         marker.setMap(map);
       });
